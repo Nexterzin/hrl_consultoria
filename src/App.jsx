@@ -394,7 +394,7 @@ export default function App() {
 
         <section id="contato" className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <motion.div {...fadeUp} className="rounded-4xl border border-brand-wine/10 bg-white/80 p-8 shadow-card">
+            <motion.div {...fadeUp} className="rounded-4xl border border-brand-wine/10 bg-white/80 p-6 shadow-card sm:p-8">
               <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-brand-green">
                 <span className="h-px w-8 bg-brand-green/40" aria-hidden="true" />
                 Contato
@@ -408,26 +408,30 @@ export default function App() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <PrimaryButton href={whatsappHref}>Enviar e-mail</PrimaryButton>
-                <PrimaryButton href="#inicio" variant="ghost">
+                <PrimaryButton href={whatsappHref} className="w-full sm:w-auto">
+                  Enviar e-mail
+                </PrimaryButton>
+                <PrimaryButton href="#inicio" variant="ghost" className="w-full sm:w-auto">
                   Voltar ao topo
                 </PrimaryButton>
               </div>
             </motion.div>
 
-            <div className="grid gap-4">
+            <div className="grid gap-4 min-w-0">
               {contactItems.map((item) => {
                 const Icon = contactIconMap[item.icon];
 
                 return (
-                  <Card key={item.label} className="p-6">
-                    <a href={item.href} className="flex items-start gap-4">
+                  <Card key={item.label} className="min-w-0 p-5 sm:p-6">
+                    <a href={item.href} className="flex min-w-0 items-start gap-4">
                       <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-pink/15 text-brand-wine">
                         <Icon className="h-5 w-5" />
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-green">{item.label}</p>
-                        <p className="mt-2 font-display text-xl font-medium text-brand-wine">{item.value}</p>
+                        <p className="mt-2 break-words font-display text-lg font-medium text-brand-wine sm:text-xl">
+                          {item.value}
+                        </p>
                       </div>
                     </a>
                   </Card>
