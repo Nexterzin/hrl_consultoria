@@ -17,13 +17,13 @@ npm run build
 
 ## Estrutura principal
 
-- `src/App.jsx`: composição da página.
+- `src/App.jsx`: composição principal da página.
 - `src/main.jsx`: entrada da aplicação.
 - `src/styles/globals.css`: base global do Tailwind e estilos comuns.
 - `src/components/ui`: componentes reutilizáveis.
 - `src/components/layout`: header e footer.
 - `src/components/sections`: seções da landing page.
-- `src/data/siteData.js`: dados mockados e conteúdo da página.
+- `src/data/siteData.js`: dados estáticos e conteúdo da página.
 - `src/assets`: logo, imagem e elementos de marca.
 
 ## Diretrizes
@@ -31,4 +31,3 @@ npm run build
 - Manter a paleta da marca.
 - Reaproveitar componentes sempre que possível.
 - Priorizar animações sutis e interfaces com boa leitura em todos os tamanhos de tela.
-
